@@ -1,0 +1,27 @@
+</br>
+<h3 class="text-center"> Hii This is your Registration page</h3>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.input :email, label: false, error: 'email is mandatory', :placeholder => 'Enter Email'%></br>
+      <%= f.input :password, label: false, error: 'Password is mandatory', :placeholder => 'Password'%></br>
+      <%= f.input :password_confirmation, label: false, error: 'Password Confirmation is mandatory', :placeholder => 'Password Confirmation'%></br>
+      <%= f.input :first_name, label: false, error: 'first Name Confirmation is mandatory', :placeholder => 'Frist Name'%></br>
+      <%= f.input :last_name, label: false, error: 'last Name  is mandatory', :placeholder => 'Enter your last Name'%></br>
+      <%= f.input :address, label: false, error: 'address  is mandatory', :placeholder => 'Enter Address'%></br>
+      <%= f.input :pin_code, label: false, error: 'pin code is mandatory', :placeholder => 'Enter Pincode'%></br>
+      <%=f.label :gender %> 
+      <%= f.collection_radio_buttons :gender, [['Male', 'Male'] ,['Femal', 'Femal']],:first, :last %></br>
+  
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+      <%= render "devise/shared/links" %>
+    <% end %>
+  </div>  
+  <div class="col-md-4"></div>
+</div>
+
+
